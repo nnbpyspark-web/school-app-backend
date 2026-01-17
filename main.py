@@ -24,6 +24,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+@app.get("/")
+def home():
+    return {"message": "School App Backend Root is active"}
+
 @app.get("/api/v1") # Root of API
 def read_root():
     return {"message": "School App Backend is running on Vercel"}
